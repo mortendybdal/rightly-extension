@@ -30,21 +30,3 @@
     transform: rotate(360deg);
   }
 }
-
-/*//////////////////*/
-
-.you-custom-theme-class .margin {
-  background-color: blue;
-}
-
-.you-custom-theme-class .border {
-  background-color: red;
-}
-
-.you-custom-theme-class .padding {
-  background-color: green;
-}
-
-.you-custom-theme-class .content {
-  background-color: gray;
-}

@@ -4,7 +4,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Frame, { FrameContextConsumer } from "react-frame-component";
 import App from "./App";
-import DomInspector from "dom-inspector";
 
 class Main extends React.Component {
   componentDidMount() {}
@@ -28,18 +27,6 @@ class Main extends React.Component {
     );
   }
 }
-
-/////// TEST
-const link = document.querySelectorAll("a");
-
-link.forEach((elm) => {
-  //elm.style.border = "5px solid red";
-});
-
-const inspector = new DomInspector();
-inspector.enable();
-
-///////
 
 const app = document.createElement("div");
 app.id = "my-extension-root";

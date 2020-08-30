@@ -1,10 +1,41 @@
 /*global chrome*/
 
 import React, { Component } from "react";
+import DomInspector from "dom-inspector";
+
 import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
+  getElementByXpath(path) {
+    return document.evaluate(
+      path,
+      document,
+      null,
+      XPathResult.FIRST_ORDERED_NODE_TYPE,
+      null
+    ).singleNodeValue;
+  }
+
+  componentDidMount() {
+    const inspector = new DomInspector({
+      theme: "you-custom-theme-class",
+    });
+    inspector.enable();
+
+    document.addEventListener(
+      "click",
+      (event) => {
+        const xpath = inspector.getXPath();
+        console.log(xpath);
+        console.log("XPATH", this.getElementByXpath(xpath));
+        const elm = this.getElementByXpath(xpath);
+        elm.style.border = "3px solid pink";
+      },
+      false
+    );
+  }
+
   render() {
     return (
       <div className="App">
